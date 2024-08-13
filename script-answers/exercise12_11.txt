@@ -1,0 +1,24 @@
+Script started on 2024-08-12 16:13:21+03:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="120" LINES="30"]
+# key KEYS counter
+sh: 1: KEYS: not found
+# KEYS *
+sh: 2: KEYS: not found
+# redis-cli
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> KEYS counter
+1) "counter"
+[0K127.0.0.1:6379> GET counter
+[27C
+"2"
+[0K127.0.0.1:6379> SET counter 9001
+OK
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> DEL counter
+(integer) 1
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> GET counter
+(nil)
+127.0.0.1:6379> 
+exit
+
+Script done on 2024-08-12 16:18:32+03:00 [COMMAND_EXIT_CODE="0"]

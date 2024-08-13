@@ -1,0 +1,7 @@
+Script started on 2024-08-11 19:31:39+03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;root@93876cbd94bc: / root@93876cbd94bc:/# apt-get update
+[?2004h]0;root@93876cbd94bc: / root@93876cbd94bc:/# apt-get -y install curl
+[?2004h]0;root@93876cbd94bc: / root@93876cbd94bc:/# curl -sL https://deb.nodesource.com/setup_20.x | bash
+apt install -y nodejs
+[?2004h]0;root@93876cbd94bc: / root@93876cbd94bc:/# node /usr/src/app/index.js
+Hello World

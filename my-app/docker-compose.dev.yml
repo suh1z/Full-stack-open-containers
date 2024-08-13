@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: my-app-frontend-dev
+    build:
+      context: ./bloglist-frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./bloglist-frontend:/usr/src/app
+    container_name: my-app-frontend-dev
