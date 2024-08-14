@@ -2,33 +2,31 @@ version: '3.8'
 
 services:
   frontend:
-    image: my-app-frontend-dev
+    image: my-app-frontend
     build:
       context: ./bloglist-frontend
-      dockerfile: dev.Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - ./bloglist-frontend:/usr/src/app
-    container_name: my-app-frontend-dev
+    container_name: my-app-frontend
     environment:
-      - VITE_BACKEND_URL=http://localhost:8080/api
+      - VITE_BACKEND_URL=http://localhost/api
 
   backend:
-    image: my-app-backend-dev
+    image: my-app-backend
     build:
       context: ./bloglist-backend
-      dockerfile: dev.Dockerfile
-    container_name: my-app-backend-dev
-    ports:
-      - "3003:3003" 
+      dockerfile: Dockerfile
+    container_name: my-app-backend
     env_file:
       - ./bloglist-backend/.env
 
   nginx:
     image: nginx:latest
     volumes:
-      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "8080:80"
+      - "80:80"
     container_name: reverse-proxy
     depends_on:
       - frontend

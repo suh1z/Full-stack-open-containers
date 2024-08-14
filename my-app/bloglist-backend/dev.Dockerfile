@@ -1,8 +1,8 @@
-FROM node:20
+FROM node:20 AS build
 
 WORKDIR /usr/src/app
 
-COPY --chown=node:node . .
+COPY package*.json ./
 
 RUN npm install
 
